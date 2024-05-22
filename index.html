@@ -3,15 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Cambiar Color de Fondo con Radio Button</title>
+
 </head>
+
 <body>
-<h2>Selecciona un color para cambiar el fondo:</h2>
-<input type="radio" id="rojo" name="color" value="red">
-<label for="rojo">Rojo</label><br>
-<input type="radio" id="azul" name="color" value="blue">
-<label for="azul">Azul</label><br>
-<input type="radio" id="verde" name="color" value="green">
-<label for="verde">Verde</label><br>
+  <h2>Selecciona un color para cambiar el fondo:</h2>
+    <input type="radio" id="rojo" name="color" value="red">
+    <label for="rojo">Rojo</label><br>
+    <input type="radio" id="azul" name="color" value="blue">
+    <label for="azul">Azul</label><br>
+    <input type="radio" id="verde" name="color" value="green">
+    <label for="verde">Verde</label><br>
+
+
+
+<script>
+        const radios = document.querySelectorAll('input[type="radio"]'); //Selecciona todos los elementos radio
+        radios.forEach(radio => {   //por cada radio cuando cambia llama a una función que cambia el color de fondo del body
+          radio.addEventListener('change', function() {
+            document.body.style.backgroundColor = this.value;
+          });
+        });
+        </script>
+
 </body>
-<script src="scriptfondo.js"></script> 
+
 </html>
